@@ -3,11 +3,15 @@ import React, { Component } from 'react';
 class Student extends Component {
 
   render() {
+    const studentName = 'Hermine Granger';
+    const studentAge = 18;
+    const studentEmail = 'hermine@hogwarts.edu';
+
     return (
       <article>
-        <h3>Persy GetsanA</h3>
-        <p>Age: 37</p>
-        <p>Email: percy@sample.com</p>
+        <h3>{studentName}</h3>
+        <p>Age: {studentAge}</p>
+        <p>Email: {studentEmail}</p>
       </article>
     );
   }
