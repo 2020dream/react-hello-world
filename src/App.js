@@ -20,6 +20,7 @@ class App extends Component {
           Hello World!!! {`${name} is totally awesome.`}
         </p>
         <img src="http://via.placeholder.com/350x150" className="trek" alt="trek" />
+        <Student />
       </div>
     );
   }
