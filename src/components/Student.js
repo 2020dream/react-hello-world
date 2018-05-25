@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class Student extends Component {
 
   render() {
-    const studentName = this.props['name'];
-    const studentEmail = this.props['email'];
-    const studentAge = this.props.age;
+    const studentName = this.props.studentData.name;
+    const studentEmail = this.props.studentData.email;
+    const studentAge = this.props.studentData.age;
 
     return (
       <article>
