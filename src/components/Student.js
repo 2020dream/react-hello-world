@@ -4,8 +4,8 @@ class Student extends Component {
 
   render() {
     const studentName = this.props['name'];
-    const studentAge = 18;
     const studentEmail = this.props['email'];
+    const studentAge = this.props.age;
 
     return (
       <article>

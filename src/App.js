@@ -8,6 +8,31 @@ class App extends Component {
 
     const name = "Dee";
 
+    const students = [
+      {
+        name: "Harriet Potter",
+        age: 18,
+        email: "harriet@hogwarts.edu"
+      },
+      {
+        name: "Ada",
+        age: 10,
+        email: "ada@hogwarts.edu"
+      }
+    ]
+
+    const studentComponents = students.map ((student) => {
+      return (
+        <li key={student.email}>
+          <Student
+            name={student.name}
+            email={student.email}
+            age={student.age}
+          />
+        </li>
+      );
+    });
+
     // Two ways to dynamically render variable value in HTML.
     return (
       <div className="App">
@@ -20,16 +45,7 @@ class App extends Component {
           Hello World!!! {`${name} is totally awesome.`}
         </p>
         <img src="http://via.placeholder.com/350x150" className="trek" alt="trek" />
-        <Student
-          name="Harriet Potter"
-          age={18}
-          email="harriet@hogwarts.edu"
-        />
-        <Student
-          name="Ada"
-          age="10"
-          email="ada@hogwarts.edu"
-        />
+        <ul>{studentComponents}</ul>
       </div>
     );
   }
