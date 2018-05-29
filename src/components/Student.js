@@ -9,6 +9,13 @@ class Student extends Component {
     email: PropTypes.string.isRequired,
   }
 
+  isTopStudent = () => {
+    if (this.props.studentData.name === 'Ada') {
+      return 'top-student';
+    }
+    return 'student'
+  }
+
   render() {
     // const studentStyle = {
     //   color: 'purple',
@@ -20,7 +27,8 @@ class Student extends Component {
     const studentAge = this.props.studentData.age;
 
     return (
-      <article className='student'>
+      <article
+      className={this.isTopStudent()}>
         <h3>{studentName}</h3>
         <p>Age: {studentAge}</p>
         <p>Email: {studentEmail}</p>
