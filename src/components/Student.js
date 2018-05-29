@@ -39,4 +39,10 @@ class Student extends Component {
 
 }
 
+Student.propTypes = {
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  isPresent: PropTypes.bool,
+}
+
 export default Student;
