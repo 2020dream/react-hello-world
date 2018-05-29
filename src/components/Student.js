@@ -7,6 +7,7 @@ class Student extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
+    isPresent: PropTypes.bool,
   }
 
   isTopStudent = () => {
