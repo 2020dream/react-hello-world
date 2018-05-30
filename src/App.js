@@ -25,10 +25,10 @@ class App extends Component {
       return (
         <li key={student.email}>
           <Student
-            studentData={student}
-            // name={student.name}
-            // email={student.email}
-            // age={student.age}
+            // studentData={student}
+            name={student.name}
+            email={student.email}
+            age={student.age}
           />
         </li>
       );

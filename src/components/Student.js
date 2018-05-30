@@ -12,14 +12,14 @@ class Student extends Component {
     };
   }
 
-  // static propTypes = {
-  //   name: PropTypes.string.isRequired,
-  //   email: PropTypes.string.isRequired,
-  //   isPresent: PropTypes.bool,
-  // }
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    isPresent: PropTypes.bool,
+  }
 
   isTopStudent = () => {
-    if (this.props.studentData.name === 'Ada') {
+    if (this.state.name === 'Ada') {
       return 'top-student';
     }
     return 'student'
@@ -41,14 +41,12 @@ class Student extends Component {
   }
 
   render() {
-    // const studentStyle = {
-    //   color: 'purple',
-    //   fontSize: '14pt',
-    // }
-
     // const studentName = this.props.studentData.name;
-    const studentEmail = this.props.studentData.email;
-    const studentAge = this.props.studentData.age;
+    // const studentEmail = this.props.studentData.email;
+    // const studentAge = this.props.studentData.age;
+
+    const studentEmail = this.props.email;
+    const studentAge = this.props.age;
 
     return (
       <article
