@@ -41,14 +41,13 @@ class Student extends Component {
   }
 
   render() {
-    const studentName = this.props.name;
     const studentEmail = this.props.email;
     const studentAge = this.props.age;
 
     return (
       <article
       className={this.isTopStudent()}>
-        <h3>{studentName}</h3>
+        <h3>{this.state.name}</h3>
         <input onChange={ this.onNameChange } type="text" name="name" />
         <h4>
           {this.state.isPresent? "In class" : "Absent"}
@@ -59,13 +58,6 @@ class Student extends Component {
       </article>
     );
   }
-
-}
-
-Student.propTypes = {
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  isPresent: PropTypes.bool,
 }
 
 export default Student;
