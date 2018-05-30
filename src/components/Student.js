@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import './Student.css';
 
 class Student extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      name: 'Ada',
+      name: props.name,
       isPresent: true
     };
   }
@@ -41,17 +41,14 @@ class Student extends Component {
   }
 
   render() {
-    // const studentName = this.props.studentData.name;
-    // const studentEmail = this.props.studentData.email;
-    // const studentAge = this.props.studentData.age;
-
+    const studentName = this.props.name;
     const studentEmail = this.props.email;
     const studentAge = this.props.age;
 
     return (
       <article
       className={this.isTopStudent()}>
-        <h3>{this.state.name}</h3>
+        <h3>{studentName}</h3>
         <input onChange={ this.onNameChange } type="text" name="name" />
         <h4>
           {this.state.isPresent? "In class" : "Absent"}
