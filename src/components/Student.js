@@ -8,14 +8,13 @@ class Student extends Component {
 
     this.state = {
       name: props.name,
-      isPresent: true
     };
   }
 
   static propTypes = {
     name: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
-    isPresent: PropTypes.bool,
+    present: PropTypes.bool,
   }
 
   isTopStudent = () => {
@@ -26,12 +25,9 @@ class Student extends Component {
   }
 
   // arrow function: this is Student
-  onToggleButton = () => {
-    // const isPresent = !this.state.isPresent;
-    this.setState({
-      // isPresent,
-      isPresent: !this.state.isPresent
-    });
+  onTogglePresent = () => {
+    console.log(this);
+    this.props.onStudentPresentChange(this.props.index);
   }
 
   onNameChange = (event) => {
@@ -40,6 +36,7 @@ class Student extends Component {
     });
   }
 
+
   render() {
     const studentEmail = this.props.email;
     const studentAge = this.props.age;
@@ -47,14 +44,14 @@ class Student extends Component {
     return (
       <article
       className={this.isTopStudent()}>
-        <h3>{this.state.name}</h3>
+        <h3>{this.props.name}</h3>
         <input onChange={ this.onNameChange } type="text" name="name" />
         <h4>
-          {this.state.isPresent? "In class" : "Absent"}
+          {this.props.present? "In class" : "Absent"}
         </h4>
+        <button onClick={ this.onTogglePresent }>Toggle Present</button>
         <p>Age: {studentAge}</p>
         <p>Email: {studentEmail}</p>
-        <button onClick={ this.onToggleButton }>Toggle Present</button>
       </article>
     );
   }
