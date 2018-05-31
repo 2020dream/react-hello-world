@@ -30,10 +30,17 @@ class NewStudentForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    this.props.addStudent({
-      name: this.state.name,
-      email: this.state.email,
-    });
+    if (this.emailValid()) {
+      this.props.addStudent({
+        name: this.state.name,
+        email: this.state.email,
+      });
+
+      this.setState({
+        name: '',
+        email: '',
+      });    
+    }
   }
 
   render() {
