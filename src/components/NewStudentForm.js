@@ -38,10 +38,21 @@ class NewStudentForm extends Component {
     return this.state.email.match(/\S+@\S+/);
   }
 
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.props.addStudent({
+      name: this.state.name,
+      email: this.state.email,
+    });
+  }
+
   render() {
     return (
       <div>
-        <form className="new-student-form">
+        <form
+          className="new-student-form"
+          onSubmit={this.onSubmit}
+        >
           <div>
             <label htmlFor="name">Name:</label>
             <input
