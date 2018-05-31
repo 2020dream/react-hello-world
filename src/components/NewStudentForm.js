@@ -29,6 +29,10 @@ class NewStudentForm extends Component {
     console.log(email);
   }
 
+  emailValid = () => {
+    return this.state.email.match(/\S+@\S+/);
+  }
+
   render() {
     return (
       <div>
@@ -47,6 +51,7 @@ class NewStudentForm extends Component {
               name="email"
               onChange={this.onEmailChange}
               value={this.state.email}
+              className={this.emailValid() ? "valid" : "invalid" }
             />
           </div>
           <input
