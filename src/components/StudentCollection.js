@@ -24,7 +24,6 @@ class StudentCollection extends Component {
     }
   }
 
-
   onStudentPresentChange = (studentIndex) => {
     console.log(studentIndex);
 
@@ -33,6 +32,15 @@ class StudentCollection extends Component {
 
     this.setState({
       students: updatedStudents
+    });
+  }
+
+  addStudent = (student) => {
+    const students = this.state.students;
+    students.push(student);
+
+    this.setState({
+      students,
     });
   }
 
@@ -53,7 +61,9 @@ class StudentCollection extends Component {
 
     return (
       <article>
-        <NewStudentForm />
+        <NewStudentForm
+          addStudent={this.addStudent}
+        />
         {studentComponents}
       </article>
     );

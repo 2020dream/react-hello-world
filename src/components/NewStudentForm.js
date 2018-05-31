@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './NewStudentForm.css';
 
 class NewStudentForm extends Component {
@@ -9,6 +10,10 @@ class NewStudentForm extends Component {
       name: '',
       email: '',
     };
+  }
+
+  static propTypes = {
+    addStudent: PropTypes.func.isRequired,
   }
 
   onNameChange = (event) => {
