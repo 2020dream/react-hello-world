@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Student from './Student'
+import NewStudentForm from './NewStudentForm'
 
 class StudentCollection extends Component {
   constructor() {
@@ -52,6 +53,7 @@ class StudentCollection extends Component {
 
     return (
       <article>
+        <NewStudentForm />
         {studentComponents}
       </article>
     );
