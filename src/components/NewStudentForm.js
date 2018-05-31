@@ -16,22 +16,12 @@ class NewStudentForm extends Component {
     addStudent: PropTypes.func.isRequired,
   }
 
-  onNameChange = (event) => {
-    const name = event.target.value;
+  onFieldChange = (key, value) => {
+    const updatedState = {};
+    updatedState[key] = value;
 
-    this.setState({
-      name,
-    });
-    console.log(name);
-  }
-
-  onEmailChange = (event) => {
-    const email = event.target.value;
-
-    this.setState({
-      email,
-    });
-    console.log(email);
+    this.setState(updatedState);
+    console.log(`Updated = ${key}`);
   }
 
   emailValid = () => {
@@ -57,7 +47,7 @@ class NewStudentForm extends Component {
             <label htmlFor="name">Name:</label>
             <input
               name="name"
-              onChange={this.onNameChange}
+              onChange={(event) => { this.onFieldChange('name', event.target.value) }}
               value={this.state.name}
             />
           </div>
@@ -65,7 +55,7 @@ class NewStudentForm extends Component {
             <label htmlFor="email">Email:</label>
             <input
               name="email"
-              onChange={this.onEmailChange}
+              onChange={(event) => { this.onFieldChange('email', event.target.value) }}
               value={this.state.email}
               className={this.emailValid() ? "valid" : "invalid" }
             />
