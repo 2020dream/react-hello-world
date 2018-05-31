@@ -17,6 +17,16 @@ class NewStudentForm extends Component {
     this.setState({
       name,
     });
+    console.log(name);
+  }
+
+  onEmailChange = (event) => {
+    const email = event.target.value;
+
+    this.setState({
+      email,
+    });
+    console.log(email);
   }
 
   render() {
@@ -33,7 +43,11 @@ class NewStudentForm extends Component {
           </div>
           <div>
             <label htmlFor="email">Email:</label>
-            <input name="email" />
+            <input
+              name="email"
+              onChange={this.onEmailChange}
+              value={this.state.email}
+            />
           </div>
           <input
             className="button success"
